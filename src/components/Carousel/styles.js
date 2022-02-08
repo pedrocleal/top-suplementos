@@ -37,5 +37,9 @@ export const Item = styled.div`
       margin-bottom: 16px;
       width: 80%;
     }
+
+    button {
+      width: 50%;
+    }
   }
 `

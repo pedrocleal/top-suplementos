@@ -1,12 +1,13 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-  margin: 0 auto;
+  width: 100%;
+  margin: auto;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
 
-  padding: 16px 100px;
+  padding: 16px;
   background: ${({ theme }) => theme.colors.blue};
 
   img {
@@ -42,7 +43,7 @@ export const SearchInput = styled.input`
   }
 `;
 
-export const Cart = styled.button`
+export const CartContainer = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;

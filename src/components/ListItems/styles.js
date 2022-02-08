@@ -7,7 +7,6 @@ export const Container = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
   width: 100%;
   max-width: 1300px;
 `
@@ -21,6 +20,8 @@ export const Grid = styled.div`
 
 export const Item = styled.div`
   display: flex;
+  height: 300px;
+  min-height: 100%;
   flex-direction: column;
   width: 100%;
   max-width: 300px;
@@ -61,10 +62,11 @@ export const Item = styled.div`
 
       span {
         display: block;
-        color: #fff;
+        color: #999;
 
         &:nth-child(2) {
           font-size: 24px;
+          color: #fff
         }
       }
     }
@@ -75,7 +77,15 @@ export const Item = styled.div`
         padding: 8px 16px;
 
         &:nth-child(2) {
-          background: ${({ theme }) => theme.colors.red};
+          background: transparent;
+          color: ${({ theme }) => theme.colors.yellow};
+          border:  1px solid ${({ theme }) => theme.colors.yellow};
+          transition: all 0.3s ease;
+
+          &:hover {
+            background: ${({ theme }) => theme.colors.yellow};
+            color: #fff;
+          }
         }
       }
       margin-top: 12px;
