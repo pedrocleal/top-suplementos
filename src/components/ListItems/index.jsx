@@ -1,26 +1,24 @@
+import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { Container, Grid, Item } from './styles';
-import { Button } from '../Button'
+import { Button } from '../Button';
 
-import { supplements } from '../../data/supplements' 
+import { supplements } from '../../data/supplements';
 
 import { CartContext } from '../App';
-import { useContext } from 'react';
 
 export default function ListItems() {
-
-  const { cartItems, setCartItems } = useContext(CartContext);
-
-  console.log(cartItems);
+  const { setCartItems } = useContext(CartContext);
 
   function handleNewCartItem(item) {
-    setCartItems(prevState => [
+    setCartItems((prevState) => [
       {
         id: item.id,
         src: item.src,
         name: item.name,
         price: item.price.discountPrice,
       },
-      ...prevState
+      ...prevState,
     ]);
   }
 
@@ -28,26 +26,34 @@ export default function ListItems() {
     <Container>
       <h1>Nossos suplementos</h1>
       <Grid>
-        {supplements.map(supplement => (
+        {supplements.map((supplement) => (
           <Item key={supplement.id}>
-            <div className='header'>
+            <div className="header">
               <img src={supplement.src} alt="Imagem de suplemento" />
             </div>
-            <div className='product-info'>
+            <div className="product-info">
               <h3>{supplement.name}</h3>
               <p>{supplement.desc}</p>
-              <div className='price'>
-                <span>De: <strong>{supplement.price.initialPrice}</strong></span>
-                <span>Por: <strong>{supplement.price.discountPrice}</strong></span>
+              <div className="price">
+                <span>
+                  De:
+                  {' '}
+                  <strong>{supplement.price.initialPrice}</strong>
+                </span>
+                <span>
+                  Por:
+                  {' '}
+                  <strong>{supplement.price.discountPrice}</strong>
+                </span>
               </div>
-              <div className='actions'>
-                <Button>Ver mais</Button>
+              <div className="actions">
+                <Link to={`/products/${supplement.id}`}>Ver mais</Link>
                 <Button onClick={() => handleNewCartItem(supplement)}>+Carrinho</Button>
               </div>
-          </div>
-        </Item>
+            </div>
+          </Item>
         ))}
       </Grid>
     </Container>
-  )
+  );
 }

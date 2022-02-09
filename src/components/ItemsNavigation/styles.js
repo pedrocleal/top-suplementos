@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -7,7 +7,7 @@ export const Container = styled.div`
   margin: 0 auto;
   background: ${({ theme }) => theme.colors.red};
   padding: 8px 50px;
-`
+`;
 
 export const LinkContainer = styled.div`
   display: flex;
@@ -21,11 +21,11 @@ export const LinkContainer = styled.div`
     color: #fff;
     text-decoration: none;
     font-size: 18px;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease-in;
     
     &:hover {
-      border-bottom: 2px solid ${({theme}) => theme.colors.yellow};
+      border-bottom: 2px solid ${({ theme }) => theme.colors.yellow};
     }
   }
   
-`
+`;

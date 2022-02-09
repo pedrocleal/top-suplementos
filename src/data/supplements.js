@@ -11,8 +11,8 @@ export const supplements = [
     desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     price: {
       initialPrice: '119,90',
-      discountPrice: '89,90'
-    }
+      discountPrice: '89,90',
+    },
   },
   {
     id: 2,
@@ -22,8 +22,8 @@ export const supplements = [
     desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     price: {
       initialPrice: '99,90',
-      discountPrice: '79,90'
-    }
+      discountPrice: '79,90',
+    },
   },
   {
     id: 3,
@@ -33,11 +33,11 @@ export const supplements = [
     desc: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     price: {
       initialPrice: '69,90',
-      discountPrice: '39,90'
-    }
+      discountPrice: '39,90',
+    },
   },
-]
+];
 
-export default function getSupplement(name) {
-  return supplements.find(supplement => supplement.name === name)
+export default function getSupplement(id) {
+  return supplements.find((supplement) => supplement.id === id);
 }

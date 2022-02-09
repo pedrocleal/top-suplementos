@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components"
+import styled from 'styled-components';
 
 export const Container = styled.div`
   display: flex;
@@ -25,7 +25,7 @@ export const Item = styled.div`
   }
 
   .info {
-    margin-left: 52px;
+    padding: 52px;
     h2 {
       color: #fff;
       font-size: 52px;
@@ -38,8 +38,26 @@ export const Item = styled.div`
       width: 80%;
     }
 
-    button {
-      width: 50%;
+    a {
+      text-decoration: none;
+      width: 400px;
+      border: 1px solid #01ad00;
+      outline: none;
+      padding: 8px 24px;
+      background: #01B700;
+      border-radius: 8px;
+      color: #fff;
+      font-weight: bold;
+      font-size: 16px;
+      transition: all 0.2s ease-in;
+  
+      &:hover {
+        background: #01AD00;
+      }
+  
+      &:active {
+        background: #019A00;
+      }
     }
   }
-`
+`;

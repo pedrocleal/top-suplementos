@@ -1,4 +1,4 @@
-import styled, {keyframes} from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
 const showCart = keyframes`
   from {
@@ -8,17 +8,17 @@ const showCart = keyframes`
   to {
     transform: translateX(0);
   }
-`
+`;
 
 export const Container = styled.div`
   max-width: 400px;
   width: 100%;
   background: #fff;
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   padding: 16px 24px;
-  display: ${({ isOpen }) => isOpen ? 'block' : 'none'};
+  display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
   animation: ${showCart} 0.2s ease-in;
   border-radius: 0px 0px 0px 20px;
 
@@ -41,7 +41,7 @@ export const Container = styled.div`
           background: #fff;
           color: #01B700;
           border: 1px solid #01B700;
-          transition: all 0.4s ease;
+          transition: all 0.2s ease-in;
 
           &:hover {
             background: #01B700;
@@ -52,7 +52,7 @@ export const Container = styled.div`
       }
     }
   }
-`
+`;
 
 export const CartItem = styled.div`
   background: #fff;
@@ -85,4 +85,4 @@ export const CartItem = styled.div`
       font-weight: bold;
     }
   }
-`
+`;

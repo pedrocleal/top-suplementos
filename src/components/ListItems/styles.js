@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Container = styled.div`
   margin: 0 auto;
@@ -9,14 +9,14 @@ export const Container = styled.div`
   flex-direction: column;
   width: 100%;
   max-width: 1300px;
-`
+`;
 
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 32px;
   margin-top: 32px;
-`
+`;
 
 export const Item = styled.div`
   display: flex;
@@ -24,9 +24,32 @@ export const Item = styled.div`
   min-height: 100%;
   flex-direction: column;
   width: 100%;
-  max-width: 300px;
+  max-width: 320px;
   border-radius: 20px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  a {
+    text-decoration: none;
+    margin-right: 16px;
+    width: 100%:
+    border: 1px solid #01ad00;
+    outline: none;
+    padding: 8px 16px;
+    background: #01B700;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      background: #01AD00;
+    }
+
+    &:active {
+      background: #019A00;
+    }
+  }
 
   .header {
     img {
@@ -53,7 +76,6 @@ export const Item = styled.div`
     p {
       margin-top: 8px;
       color: ${({ theme }) => theme.colors.yellow};
-      font-weight: bold;
       font-size: 14px;
     }
 
@@ -80,7 +102,7 @@ export const Item = styled.div`
           background: transparent;
           color: ${({ theme }) => theme.colors.yellow};
           border:  1px solid ${({ theme }) => theme.colors.yellow};
-          transition: all 0.3s ease;
+          transition: all 0.2s ease-in;
 
           &:hover {
             background: ${({ theme }) => theme.colors.yellow};
@@ -93,4 +115,4 @@ export const Item = styled.div`
     
   }
 
-`
+`;

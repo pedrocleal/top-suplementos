@@ -1,52 +1,57 @@
-import { Link } from "react-router-dom";
-import { Container, LinkContainer } from "./styles";
+import { Link } from 'react-router-dom';
+import { Container, LinkContainer } from './styles';
 
 export default function ItemsNavigation() {
   return (
     <Container>
       <LinkContainer>
-        <Link 
-          to='/top5'>
+        <Link
+          to="/products"
+        >
           TOP 5
         </Link>
       </LinkContainer>
 
       <LinkContainer>
-        <Link 
-          to='/whey'>
+        <Link
+          to="/products"
+        >
           WHEY PROTEIN
         </Link>
       </LinkContainer>
 
       <LinkContainer>
-        <Link 
-          to='/creatina'>
+        <Link
+          to="/products"
+        >
           CREATINAS
         </Link>
       </LinkContainer>
 
       <LinkContainer>
-        <Link 
-          to='/termo'>
+        <Link
+          to="/products"
+        >
           TERMOGÊNICOS
         </Link>
       </LinkContainer>
 
       <LinkContainer>
-        <Link 
-          to='/pre-treino'>
+        <Link
+          to="/products"
+        >
           PRÉ-TREINO
         </Link>
       </LinkContainer>
 
       <LinkContainer>
-        <Link 
-          to='outros'>
+        <Link
+          to="/products"
+        >
           OUTROS
         </Link>
       </LinkContainer>
 
-      
     </Container>
-  )
+  );
 }

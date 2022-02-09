@@ -1,23 +1,23 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../../assets/images/icons/Logo.svg';
 import cartIcon from '../../assets/images/icons/Carrinho.svg';
 import searchIcon from '../../assets/images/icons/Search.svg';
 import {
   Container, SearchContainer, SearchInput, CartContainer,
 } from './styles';
-import { Link } from 'react-router-dom';
 
 import Cart from '../Cart';
 
 export default function Header() {
   const [search, setSearch] = useState('');
-  const [ cart, setCart ] = useState(false);
+  const [cart, setCart] = useState(false);
 
   return (
     <>
-      <Cart isOpen={cart} setCart={setCart}/>
+      <Cart isOpen={cart} setCart={setCart} />
       <Container>
-        <Link to='/'>
+        <Link to="/">
           <img src={logo} alt="logo" />
         </Link>
 
@@ -33,7 +33,7 @@ export default function Header() {
           </Link>
         </SearchContainer>
 
-        <CartContainer onClick={() => setCart(prevState => !prevState)}>
+        <CartContainer onClick={() => setCart((prevState) => !prevState)}>
           <img src={cartIcon} alt="Carrinho" />
         </CartContainer>
       </Container>

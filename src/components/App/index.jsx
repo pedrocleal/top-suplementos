@@ -8,24 +8,21 @@ import { Container } from './styles';
 
 import Header from '../Header';
 import ItemsNavigation from '../ItemsNavigation';
-import Carousel from '../Carousel'
-import ListItems from '../ListItems';
+import Routes from '../../Routes';
 
 export const CartContext = createContext();
 
 export default function App() {
-
-  const [ cartItems, setCartItems ] = useState([]);
+  const [cartItems, setCartItems] = useState([]);
 
   return (
-    <CartContext.Provider value={{cartItems, setCartItems}}>
+    <CartContext.Provider value={{ cartItems, setCartItems }}>
       <ThemeProvider theme={defaultTheme}>
         <GlobalStyles />
         <Container>
           <Header />
           <ItemsNavigation />
-          <Carousel />
-          <ListItems />
+          <Routes />
         </Container>
       </ThemeProvider>
     </CartContext.Provider>
