@@ -20,7 +20,6 @@ export const Grid = styled.div`
 
 export const Item = styled.div`
   display: flex;
-  height: 300px;
   min-height: 100%;
   flex-direction: column;
   width: 100%;
@@ -69,6 +68,9 @@ export const Item = styled.div`
     background: ${({ theme }) => theme.colors.blue};
     
     h3 {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
       font-size: 24px;
       color: #fff;
     }
