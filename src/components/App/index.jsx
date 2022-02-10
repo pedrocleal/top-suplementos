@@ -1,5 +1,6 @@
-import { createContext, useState } from 'react';
 import { ThemeProvider } from 'styled-components';
+
+import CartProvider from '../../context/CartContext';
 
 import GlobalStyles from '../../assets/styles/global';
 import defaultTheme from '../../assets/styles/themes/default';
@@ -10,13 +11,9 @@ import Header from '../Header';
 import ItemsNavigation from '../ItemsNavigation';
 import Routes from '../../Routes';
 
-export const CartContext = createContext();
-
 export default function App() {
-  const [cartItems, setCartItems] = useState([]);
-
   return (
-    <CartContext.Provider value={{ cartItems, setCartItems }}>
+    <CartProvider>
       <ThemeProvider theme={defaultTheme}>
         <GlobalStyles />
         <Container>
@@ -25,6 +22,6 @@ export default function App() {
           <Routes />
         </Container>
       </ThemeProvider>
-    </CartContext.Provider>
+    </CartProvider>
   );
 }

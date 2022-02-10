@@ -5,22 +5,11 @@ import { Button } from '../Button';
 
 import { supplements } from '../../data/supplements';
 
-import { CartContext } from '../App';
+import { CartContext } from '../../context/CartContext';
 
 export default function ListItems() {
-  const { setCartItems } = useContext(CartContext);
 
-  function handleNewCartItem(item) {
-    setCartItems((prevState) => [
-      {
-        id: item.id,
-        src: item.src,
-        name: item.name,
-        price: item.price.discountPrice,
-      },
-      ...prevState,
-    ]);
-  }
+  const { onAddItemToCart } = useContext(CartContext);
 
   return (
     <Container>
@@ -48,7 +37,7 @@ export default function ListItems() {
               </div>
               <div className="actions">
                 <Link to={`/products/${supplement.id}`}>Ver mais</Link>
-                <Button onClick={() => handleNewCartItem(supplement)}>+Carrinho</Button>
+                <Button onClick={() => onAddItemToCart(supplement)}>+Carrinho</Button>
               </div>
             </div>
           </Item>

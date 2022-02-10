@@ -11,6 +11,8 @@ const showCart = keyframes`
 `;
 
 export const Container = styled.div`
+  max-height: 100%;
+  overflow-y: auto;
   max-width: 400px;
   width: 100%;
   background: #fff;
@@ -21,6 +23,22 @@ export const Container = styled.div`
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
   animation: ${showCart} 0.2s ease-in;
   border-radius: 0px 0px 0px 20px;
+
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    button {
+      background: transparent;
+      outline: none;
+      border: none;
+      
+      svg {
+        font-size: 24px;
+      }
+    }
+  }
 
   .footer {
     margin-top: 32px;

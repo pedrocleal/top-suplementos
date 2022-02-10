@@ -5,8 +5,13 @@ import { Button } from '../Button';
 
 import getSupplement from '../../data/supplements';
 
+import { CartContext } from '../../context/CartContext';
+import { useContext } from 'react';
+
 export default function Product({ id }) {
   const product = getSupplement(Number(id));
+
+  const { onAddItemToCart } = useContext(CartContext)
 
   return (
     <Container>
@@ -28,7 +33,7 @@ export default function Product({ id }) {
         </span>
         <div className="actions">
           <Button>Comprar</Button>
-          <Button className="cart">+Carrinho</Button>
+          <Button className="cart" onClick={() => onAddItemToCart(product)}>+Carrinho</Button>
         </div>
       </div>
     </Container>
