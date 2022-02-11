@@ -11,6 +11,11 @@ export default function ListItems() {
 
   const { onAddItemToCart } = useContext(CartContext);
 
+  function handleAddToCartClick(supplement) {
+    onAddItemToCart(supplement);
+
+  }
+
   return (
     <Container>
       <h1>Nossos suplementos</h1>
@@ -37,7 +42,7 @@ export default function ListItems() {
               </div>
               <div className="actions">
                 <Link to={`/products/${supplement.id}`}>Ver mais</Link>
-                <Button onClick={() => onAddItemToCart(supplement)}>+Carrinho</Button>
+                <Button onClick={() => handleAddToCartClick(supplement)}>+Carrinho</Button>
               </div>
             </div>
           </Item>

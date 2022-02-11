@@ -54,7 +54,7 @@ export const supplements = [
     },
   },
   {
-    id: 4,
+    id: 5,
     type: 'pre-treino',
     src: preTreinoPsychotic,
     name: 'Pré Treino - Psychotic',
@@ -65,7 +65,7 @@ export const supplements = [
     },
   },
   {
-    id: 5,
+    id: 6,
     type: 'whey',
     src: wheyMax,
     name: 'Whey Protein - Max Titanium',
@@ -76,7 +76,7 @@ export const supplements = [
     },
   },
   {
-    id: 6,
+    id: 7,
     type: 'hipercalorico',
     src: hipercaloricoBlackSkull,
     name: 'Hipercalórico - BlackSkull',
@@ -87,7 +87,7 @@ export const supplements = [
     },
   },
   {
-    id: 7,
+    id: 8,
     type: 'hipercalorico',
     src: hipercaloricoProfit,
     name: 'Hipercalórico - Profit',
@@ -98,7 +98,7 @@ export const supplements = [
     },
   },
   {
-    id: 8,
+    id: 9,
     type: 'whey',
     src: wheyProtein,
     name: 'Whey Protein - Gold',

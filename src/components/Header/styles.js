@@ -47,7 +47,20 @@ export const CartContainer = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
+  z-index: 0;
 
   background: transparent;
   border: none;
+  position: relative;
+
+  span {
+    background: #fff;
+    border-radius: 20px;
+    padding: 4px;
+    color: ${({ theme }) => theme.colors.blue};
+    font-weight: bold;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 `;

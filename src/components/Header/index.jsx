@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '../../assets/images/icons/Logo.svg';
 import cartIcon from '../../assets/images/icons/Carrinho.svg';
@@ -9,9 +9,15 @@ import {
 
 import Cart from '../Cart';
 
+import { CartContext } from '../../context/CartContext';
+
 export default function Header() {
   const [search, setSearch] = useState('');
   const [cart, setCart] = useState(false);
+
+  const { cartItems } = useContext(CartContext);
+
+  const itemsCounter = cartItems.length;
 
   return (
     <>
@@ -35,6 +41,7 @@ export default function Header() {
 
         <CartContainer onClick={() => setCart((prevState) => !prevState)}>
           <img src={cartIcon} alt="Carrinho" />
+          <span>{itemsCounter}</span>
         </CartContainer>
       </Container>
     </>

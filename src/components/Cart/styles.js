@@ -11,6 +11,7 @@ const showCart = keyframes`
 `;
 
 export const Container = styled.div`
+  z-index: 1;
   max-height: 100%;
   overflow-y: auto;
   max-width: 400px;
