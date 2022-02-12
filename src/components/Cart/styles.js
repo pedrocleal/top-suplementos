@@ -104,4 +104,32 @@ export const CartItem = styled.div`
       font-weight: bold;
     }
   }
+
+  .actions {
+
+    & > * {
+      margin-right: 8px;
+    }
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 8px;
+    font-size: 20px;
+
+    button {
+      background: transparent;
+      border: none;
+      outline; none;
+      margin-top: 4px;
+    }
+
+    span {
+      font-size: 16px;
+    }
+
+    .trash {
+      cursor: pointer;
+    }
+  }
 `;

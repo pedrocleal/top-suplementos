@@ -1,7 +1,10 @@
 import PropTypes from 'prop-types';
 import { useContext, useEffect, useState } from 'react';
+import { GrClose } from 'react-icons/gr';
+import { FiTrash2 } from 'react-icons/fi';
+import { FaPlus, FaMinus } from 'react-icons/fa';
+
 import { CartItem, Container } from './styles';
-import { GrClose } from 'react-icons/gr'
 
 import { Button } from '../Button';
 
@@ -10,7 +13,9 @@ import { CartContext } from '../../context/CartContext';
 export default function Cart({ isOpen, setCart }) {
   const [total, setTotal] = useState('00,00');
 
-  const { cartItems } = useContext(CartContext);
+  const [itemAmount, setItemAmount] = useState(0);
+
+  const { cartItems, handleDeleteCartItem } = useContext(CartContext);
 
   const itemsPrice = cartItems.map((item) => Number(item.price.replace(',', '.')));
 
@@ -21,9 +26,9 @@ export default function Cart({ isOpen, setCart }) {
 
   return (
     <Container isOpen={isOpen}>
-      <div className='header'>
+      <div className="header">
         <h2>Meu carrinho</h2>
-        <button onClick={() => setCart(false)}><GrClose /></button>
+        <button type="button" onClick={() => setCart(false)}><GrClose /></button>
       </div>
 
       {cartItems.length !== 0
@@ -33,6 +38,15 @@ export default function Cart({ isOpen, setCart }) {
             <div className="info">
               <strong>{item.name}</strong>
               <span>{item.price}</span>
+              <div className="actions">
+                <button type="button" onClick={() => setItemAmount((prevState) => prevState - 1)}><FaMinus /></button>
+                <span>{itemAmount}</span>
+                <button type="button" onClick={() => setItemAmount((prevState) => prevState + 1)}><FaPlus /></button>
+                <FiTrash2
+                  className="trash"
+                  onClick={() => handleDeleteCartItem(item.name)}
+                />
+              </div>
             </div>
           </CartItem>
         ))

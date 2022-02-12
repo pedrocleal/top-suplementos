@@ -9,12 +9,7 @@ import { CartContext } from '../../context/CartContext';
 
 export default function ListItems() {
 
-  const { onAddItemToCart } = useContext(CartContext);
-
-  function handleAddToCartClick(supplement) {
-    onAddItemToCart(supplement);
-
-  }
+  const { handleNewCartItem } = useContext(CartContext);
 
   return (
     <Container>
@@ -42,7 +37,7 @@ export default function ListItems() {
               </div>
               <div className="actions">
                 <Link to={`/products/${supplement.id}`}>Ver mais</Link>
-                <Button onClick={() => handleAddToCartClick(supplement)}>+Carrinho</Button>
+                <Button onClick={() => handleNewCartItem(supplement)}>+Carrinho</Button>
               </div>
             </div>
           </Item>

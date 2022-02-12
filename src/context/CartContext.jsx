@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-import { createContext, useState } from 'react';
+import { createContext, useMemo, useState } from 'react';
 
 export const CartContext = createContext();
 
@@ -20,12 +20,17 @@ export default function CartProvider({ children }) {
     ]);
   }
 
+  function handleDeleteCartItem(name) {
+    return setCartItems((prevState) => prevState.filter((item) => item.name !== name));
+  }
+
+  const cartValues = useMemo(
+    () => ({ cartItems, handleDeleteCartItem, handleNewCartItem }),
+    [cartItems, handleDeleteCartItem, handleNewCartItem],
+  );
+
   return (
-    <CartContext.Provider value={{
-      cartItems,
-      onAddItemToCart: handleNewCartItem,
-    }}
-    >
+    <CartContext.Provider value={cartValues}>
       {children}
     </CartContext.Provider>
   );
