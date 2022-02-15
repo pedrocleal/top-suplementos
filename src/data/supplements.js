@@ -19,6 +19,7 @@ export const supplements = [
       initialPrice: '119,90',
       discountPrice: '89,90',
     },
+    counter: 0,
   },
   {
     id: 2,
@@ -30,6 +31,7 @@ export const supplements = [
       initialPrice: '99,90',
       discountPrice: '79,90',
     },
+    counter: 0,
   },
   {
     id: 3,
@@ -41,6 +43,7 @@ export const supplements = [
       initialPrice: '69,90',
       discountPrice: '39,90',
     },
+    counter: 0,
   },
   {
     id: 4,
@@ -52,6 +55,7 @@ export const supplements = [
       initialPrice: '69,90',
       discountPrice: '39,90',
     },
+    counter: 0,
   },
   {
     id: 5,
@@ -63,6 +67,7 @@ export const supplements = [
       initialPrice: '69,90',
       discountPrice: '39,90',
     },
+    counter: 0,
   },
   {
     id: 6,
@@ -74,6 +79,7 @@ export const supplements = [
       initialPrice: '119,90',
       discountPrice: '89,90',
     },
+    counter: 0,
   },
   {
     id: 7,
@@ -85,6 +91,7 @@ export const supplements = [
       initialPrice: '69,90',
       discountPrice: '39,90',
     },
+    counter: 0,
   },
   {
     id: 8,
@@ -96,6 +103,7 @@ export const supplements = [
       initialPrice: '69,90',
       discountPrice: '39,90',
     },
+    counter: 0,
   },
   {
     id: 9,
@@ -107,6 +115,7 @@ export const supplements = [
       initialPrice: '119,90',
       discountPrice: '89,90',
     },
+    counter: 0,
   },
 ];
 

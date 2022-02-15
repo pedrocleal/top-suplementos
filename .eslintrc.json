@@ -24,6 +24,7 @@
       "prefer-const": 0,
       "import/no-cycle": 0,
       "padded-blocks": 0,
-      "jsx-a11y/control-has-associated-label": 0
+      "jsx-a11y/control-has-associated-label": 0,
+      "max-len": 0
     }
 }

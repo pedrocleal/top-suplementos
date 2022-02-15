@@ -8,16 +8,43 @@ export default function CartProvider({ children }) {
 
   const [cartItems, setCartItems] = useState([]);
 
+  function handleItemsCounterPlus(id) {
+    return setCartItems((prevState) => prevState.map((item) => (
+      item.id === id
+        ? {
+          ...item,
+          counter: item.counter + 1,
+        } : item
+    )));
+  }
+
+  function handleItemsCounterMinus(id) {
+    return setCartItems((prevState) => prevState.map((item) => (
+      item.id === id
+        ? {
+          ...item,
+          counter: item.counter - 1,
+        } : item
+    )));
+  }
+
   function handleNewCartItem(item) {
-    setCartItems((prevState) => [
-      {
-        id: item.id,
-        src: item.src,
-        name: item.name,
-        price: item.price.discountPrice,
-      },
-      ...prevState,
-    ]);
+    const clickedItem = cartItems.find((index) => index.id === item.id);
+
+    if (!clickedItem) {
+      setCartItems((prevState) => [
+        {
+          id: item.id,
+          src: item.src,
+          name: item.name,
+          price: item.price.discountPrice,
+          counter: item.counter + 1,
+        },
+        ...prevState,
+      ]);
+    } else {
+      handleItemsCounterPlus(item.id);
+    }
   }
 
   function handleDeleteCartItem(name) {
@@ -25,7 +52,9 @@ export default function CartProvider({ children }) {
   }
 
   const cartValues = useMemo(
-    () => ({ cartItems, handleDeleteCartItem, handleNewCartItem }),
+    () => ({
+      cartItems, handleDeleteCartItem, handleNewCartItem, handleItemsCounterPlus, handleItemsCounterMinus,
+    }),
     [cartItems, handleDeleteCartItem, handleNewCartItem],
   );
 

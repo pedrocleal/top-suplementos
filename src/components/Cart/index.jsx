@@ -1,23 +1,27 @@
 import PropTypes from 'prop-types';
-import { useContext, useEffect, useState } from 'react';
+import {
+  useContext, useEffect, useMemo, useState,
+} from 'react';
 import { GrClose } from 'react-icons/gr';
-import { FiTrash2 } from 'react-icons/fi';
-import { FaPlus, FaMinus } from 'react-icons/fa';
 
-import { CartItem, Container } from './styles';
+import { Container } from './styles';
 
+import CartItem from '../CartItem';
 import { Button } from '../Button';
 
 import { CartContext } from '../../context/CartContext';
 
 export default function Cart({ isOpen, setCart }) {
   const [total, setTotal] = useState('00,00');
+  const memoTotal = useMemo(() => total, [total]);
 
-  const [itemAmount, setItemAmount] = useState(0);
+  const {
+    cartItems, handleDeleteCartItem, handleItemsCounterPlus, handleItemsCounterMinus,
+  } = useContext(CartContext);
 
-  const { cartItems, handleDeleteCartItem } = useContext(CartContext);
+  const cartItemsMemo = useMemo(() => cartItems, [cartItems]);
 
-  const itemsPrice = cartItems.map((item) => Number(item.price.replace(',', '.')));
+  const itemsPrice = cartItemsMemo.map((item) => Number(item.price.replace(',', '.') * item.counter));
 
   useEffect(() => {
     const totalAmount = itemsPrice.reduce((prev, index) => prev + index, 0);
@@ -31,24 +35,19 @@ export default function Cart({ isOpen, setCart }) {
         <button type="button" onClick={() => setCart(false)}><GrClose /></button>
       </div>
 
-      {cartItems.length !== 0
-        ? cartItems.map((item) => (
-          <CartItem key={Math.random()}>
-            <img src={item.src} alt="Item foto" />
-            <div className="info">
-              <strong>{item.name}</strong>
-              <span>{item.price}</span>
-              <div className="actions">
-                <button type="button" onClick={() => setItemAmount((prevState) => prevState - 1)}><FaMinus /></button>
-                <span>{itemAmount}</span>
-                <button type="button" onClick={() => setItemAmount((prevState) => prevState + 1)}><FaPlus /></button>
-                <FiTrash2
-                  className="trash"
-                  onClick={() => handleDeleteCartItem(item.name)}
-                />
-              </div>
-            </div>
-          </CartItem>
+      {cartItemsMemo.length !== 0
+        ? cartItemsMemo.map((item) => (
+          <CartItem
+            id={item.id}
+            key={Math.random()}
+            src={item.src}
+            name={item.name}
+            price={item.price}
+            counter={item.counter}
+            onItemsCounterPlus={handleItemsCounterPlus}
+            onItemsCounterMinus={handleItemsCounterMinus}
+            onDeleteItem={handleDeleteCartItem}
+          />
         ))
         : <span>Seu carrinho está vazio!</span>}
 
@@ -56,7 +55,7 @@ export default function Cart({ isOpen, setCart }) {
         <h2>TOTAL</h2>
         <h1>
           R$
-          {total}
+          {memoTotal}
         </h1>
         <div className="actions">
           <Button>Finalizar compra</Button>
