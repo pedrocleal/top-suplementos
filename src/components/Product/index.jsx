@@ -10,18 +10,7 @@ import { CartContext } from '../../context/CartContext';
 
 export default function Product({ id }) {
   const product = getSupplement(Number(id));
-  const { cartItems, handleNewCartItem } = useContext(CartContext);
-
-  const hasItem = cartItems.find((item) => item.name === product.name);
-
-  function handleAddCartClick() {
-    if (hasItem) {
-      return console.log('item adicionado na lista');
-    }
-    return handleNewCartItem(product);
-
-  }
-
+  const { handleNewCartItem } = useContext(CartContext);
   return (
     <Container>
       <div className="left">
@@ -42,7 +31,7 @@ export default function Product({ id }) {
         </span>
         <div className="actions">
           <Button>Comprar</Button>
-          <Button className="cart" onClick={() => handleAddCartClick(product)}>+Carrinho</Button>
+          <Button className="cart" onClick={() => handleNewCartItem(product)}>+Carrinho</Button>
         </div>
       </div>
     </Container>

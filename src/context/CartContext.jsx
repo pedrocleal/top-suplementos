@@ -19,6 +19,11 @@ export default function CartProvider({ children }) {
   }
 
   function handleItemsCounterMinus(id) {
+    const clickedItem = cartItems.find((item) => item.id === id);
+
+    if (clickedItem.counter === 0) {
+      return 1;
+    }
     return setCartItems((prevState) => prevState.map((item) => (
       item.id === id
         ? {
