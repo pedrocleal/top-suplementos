@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <>
       <Carousel />
-      <ListItems />
+      <ListItems home />
     </>
   );
 }

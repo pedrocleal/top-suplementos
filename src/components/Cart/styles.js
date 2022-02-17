@@ -24,6 +24,7 @@ export const Container = styled.div`
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
   animation: ${showCart} 0.2s ease-in;
   border-radius: 0px 0px 0px 20px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   .header {
     display: flex;

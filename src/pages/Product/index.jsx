@@ -7,6 +7,7 @@ import arrow from '../../assets/images/icons/arrow-left.svg';
 
 export default function Product() {
   const { productId } = useParams();
+
   return (
     <Container>
       <Link to="/">

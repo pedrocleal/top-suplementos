@@ -1,7 +1,13 @@
+import { Container } from './styles';
+
+import FilterItems from '../../components/FilterItems';
 import ListItems from '../../components/ListItems';
 
 export default function Products() {
   return (
-    <ListItems />
+    <Container>
+      <FilterItems />
+      <ListItems />
+    </Container>
   );
 }

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin: 52px auto;
+  margin: ${({ home }) => (home ? '52px auto' : '52px 0')};
   display: flex;
   align-items: center;
   justify-content: center;

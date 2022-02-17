@@ -140,7 +140,15 @@ export const NotFound = styled.div`
   color: #ddd;
 
   a {
+    font-size: 24px;
+    margin: 12px 0;
     text-decoration: none;
-    color: ${({ theme }) => theme.colors.blue};
+    color: ${({ theme }) => theme.colors.red};
+    font-weight: bold;
+    transition: all 0.2s ease-in;
+
+    &:hover {
+      color: ${({ theme }) => theme.colors.blue};
+    }
   }
   `;

@@ -25,6 +25,7 @@
       "import/no-cycle": 0,
       "padded-blocks": 0,
       "jsx-a11y/control-has-associated-label": 0,
-      "max-len": 0
+      "max-len": 0,
+      "react/jsx-no-useless-fragment": 0
     }
 }

@@ -120,5 +120,8 @@ export const supplements = [
 ];
 
 export default function getSupplement(id) {
+  if (id > supplements.length) {
+    return false;
+  }
   return supplements.find((supplement) => supplement.id === id);
 }

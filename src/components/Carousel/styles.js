@@ -34,21 +34,20 @@ export const Item = styled.div`
     p {
       color: ${({ theme }) => theme.colors.yellow};
       font-size: 24px;
-      margin-bottom: 16px;
+      margin-bottom: 28px;
       width: 80%;
     }
 
     a {
       text-decoration: none;
-      width: 400px;
       border: 1px solid #01ad00;
       outline: none;
-      padding: 8px 24px;
+      padding: 14px 32px;
       background: #01B700;
       border-radius: 8px;
       color: #fff;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 24px;
       transition: all 0.2s ease-in;
   
       &:hover {

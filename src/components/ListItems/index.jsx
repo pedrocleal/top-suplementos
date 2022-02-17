@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Grid, Item } from './styles';
@@ -7,12 +8,12 @@ import { supplements } from '../../data/supplements';
 
 import { CartContext } from '../../context/CartContext';
 
-export default function ListItems() {
+export default function ListItems({ home }) {
 
   const { handleNewCartItem } = useContext(CartContext);
 
   return (
-    <Container>
+    <Container home={home}>
       <h1>Nossos suplementos</h1>
       <Grid>
         {supplements.map((supplement) => (
@@ -46,3 +47,7 @@ export default function ListItems() {
     </Container>
   );
 }
+
+ListItems.propTypes = {
+  home: PropTypes.bool.isRequired,
+};

@@ -3,6 +3,7 @@ import Products from './pages/Products';
 import Product from './pages/Product';
 import Home from './pages/Home';
 import Search from './pages/Search';
+import NotFound from './pages/NotFound/NotFound';
 
 export default function Routess() {
   return (
@@ -11,6 +12,7 @@ export default function Routess() {
       <Route path="/products" element={<Products />} />
       <Route path="/products/:productId" element={<Product />} />
       <Route path="/search/:searchQuery" element={<Search />} />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

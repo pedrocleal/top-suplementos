@@ -75,3 +75,16 @@ export const Container = styled.div`
     }
   }
 `;
+
+export const ContainerNotFound = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 52px;
+  
+  h1 {
+    font-size: 52px;
+    color: ${({ theme }) => theme.colors.red}
+  }
+`;
