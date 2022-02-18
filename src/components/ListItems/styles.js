@@ -100,14 +100,14 @@ export const Item = styled.div`
         padding: 8px 16px;
 
         &:nth-child(2) {
-          background: transparent;
-          color: ${({ theme }) => theme.colors.yellow};
+          background: ${({ theme }) => theme.colors.yellow};
+          color: #fff;
           border:  1px solid ${({ theme }) => theme.colors.yellow};
           transition: all 0.2s ease-in;
 
           &:hover {
-            background: ${({ theme }) => theme.colors.yellow};
-            color: #fff;
+            background: transparent;
+            color: ${({ theme }) => theme.colors.yellow};
           }
         }
       }

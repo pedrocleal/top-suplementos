@@ -125,3 +125,7 @@ export default function getSupplement(id) {
   }
   return supplements.find((supplement) => supplement.id === id);
 }
+
+// function filterSupplementsByBrand(brand) {
+//   return supplements.filter((supplement) => supplement.name.includes(brand));
+// }
