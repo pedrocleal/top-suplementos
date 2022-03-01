@@ -6,8 +6,6 @@
 ![Badge](https://img.shields.io/github/last-commit/pedrocleal/top-suplementos?style=for-the-badge)
 ![Badge](https://img.shields.io/github/languages/top/pedrocleal/top-suplementos?color=c&style=for-the-badge)
 
-<br />
-
 Loja virtual de suplementos criada com o intuito de colocar em prática os meus estudos relacionados as tecnologias citadas abaixo.
 
 Para o desenvolvimento do app, foi usado a biblioteca <a href="https://pt-br.reactjs.org/" target="_blamk">React.js</a> combinado com <a href="https://reactrouter.com/" target="_blamk">react-router-dom</a> para o gerenciamento de rotas. 
