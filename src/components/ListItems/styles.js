@@ -1,29 +1,32 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin: ${({ home }) => (home ? '52px auto' : '52px 0')};
+  margin: 24px auto;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
   width: 100%;
-  max-width: 1300px;
 `;
 
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 32px;
-  margin-top: 32px;
+  gap: 24px;
+  margin: 32px;
+  max-width: 1080px;
+
+  @media (max-width: 1080px) {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 export const Item = styled.div`
   display: flex;
-  min-height: 100%;
-  flex-direction: column;
-  width: 100%;
   max-width: 320px;
-  border-radius: 20px;
+  width: 100%;
+  flex-direction: column;
+  border-radius: 15px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   a {
@@ -53,7 +56,7 @@ export const Item = styled.div`
     img {
       height: 150px;
     }
-    border-radius: 20px 20px 0 0;
+    border-radius: 15px 15px 0 0;
     padding: 16px;
     display: flex;
     align-items: center;
@@ -62,7 +65,7 @@ export const Item = styled.div`
   }
 
   .product-info {
-    border-radius: 0 0 20px 20px;
+    border-radius: 0 0 15px 15px;
     padding: 16px;
     background: ${({ theme }) => theme.colors.blue};
     

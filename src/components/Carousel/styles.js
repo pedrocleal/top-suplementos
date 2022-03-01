@@ -5,7 +5,7 @@ export const Container = styled.div`
   align-items: center;
   justify-content: flex-start; 
   margin: 0 auto;
-  overflow-x: scroll;
+  overflow-x: auto;
   background: ${({ theme }) => theme.colors.darkBlue};
   
   img {

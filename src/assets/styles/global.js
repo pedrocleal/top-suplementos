@@ -11,7 +11,6 @@ export default createGlobalStyle`
   body {
     font-size: 16px;
     background: ${({ theme }) => theme.colors.backgroundColor};
-    overflow-x: hidden;
     position: relative;
   }
 

@@ -34,7 +34,6 @@ export const Container = styled.div`
 export const Item = styled.div`
   margin-right: 24px;
   display: flex;
-  min-height: 100%;
   flex-direction: column;
   width: 100%;
   max-width: 320px;

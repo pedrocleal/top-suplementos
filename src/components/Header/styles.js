@@ -1,18 +1,21 @@
 import styled from 'styled-components';
 
 export const Container = styled.header`
-  width: 100%;
-  margin: auto;
+  margin: 0 auto;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-evenly;
-
   padding: 16px;
   background: ${({ theme }) => theme.colors.blue};
 
   img {
-    heigth: 50px;
     width: 50px;
+  }
+
+  @media (max-width: 580px) {
+    padding: 16px 24px;
+    justify-content: center;
   }
 `;
 
@@ -24,9 +27,13 @@ export const SearchContainer = styled.div`
 
   img {
     margin-top: 4px;
-    heigth: 30px;
+    height: 30px;
     width: 30px;
     background: #fff;
+  }
+
+  @media (max-width: 580px) {
+    display: none;
   }
 `;
 

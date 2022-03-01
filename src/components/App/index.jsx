@@ -8,7 +8,7 @@ import defaultTheme from '../../assets/styles/themes/default';
 import { Container } from './styles';
 
 import Header from '../Header';
-import ItemsNavigation from '../ItemsNavigation';
+// import ItemsNavigation from '../ItemsNavigation';
 import Routes from '../../Routes';
 
 export default function App() {
@@ -18,7 +18,6 @@ export default function App() {
         <GlobalStyles />
         <Container>
           <Header />
-          <ItemsNavigation />
           <Routes />
         </Container>
       </ThemeProvider>
