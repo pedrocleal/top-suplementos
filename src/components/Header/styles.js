@@ -14,8 +14,12 @@ export const Container = styled.header`
   }
 
   @media (max-width: 580px) {
+    img {
+      width: 40px;
+    }
     padding: 16px 24px;
-    justify-content: center;
+    justify-content: space-between;
+    height: 60px;
   }
 `;
 
@@ -24,6 +28,7 @@ export const SearchContainer = styled.div`
   align-items: center;
   width: 400px;
   background #fff;
+  border-radius: 4px;
 
   img {
     margin-top: 4px;
@@ -33,7 +38,7 @@ export const SearchContainer = styled.div`
   }
 
   @media (max-width: 580px) {
-    display: none;
+    width: 200px;
   }
 `;
 
@@ -69,5 +74,10 @@ export const CartContainer = styled.button`
     position: absolute;
     top: 0;
     right: 0;
+
+    @media (max-width: 580px) {
+      padding: 2px;
+    }
+    
   }
 `;

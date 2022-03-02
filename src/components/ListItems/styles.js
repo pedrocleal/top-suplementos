@@ -7,17 +7,31 @@ export const Container = styled.div`
   justify-content: center;
   flex-direction: column;
   width: 100%;
+  max-width: 1200px;
+
+  h1 {
+    @media (max-width: 780px) {
+      font-size: 24px;
+    }
+  }
 `;
 
 export const Grid = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   gap: 24px;
   margin: 32px;
-  max-width: 1080px;
+  
+  @media (max-width: 1380px) {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
   @media (max-width: 1080px) {
     grid-template-columns: 1fr 1fr;
+  }
+
+  @media (max-width: 520px) {
+    grid-template-columns: 1fr;
   }
 `;
 
@@ -28,6 +42,14 @@ export const Item = styled.div`
   flex-direction: column;
   border-radius: 15px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  overflow-y: hidden;
+
+  @media (max-width: 680px) {
+    max-width: 250px;
+  }
+  @media (max-width: 450px) {
+    max-width: 200px;
+  }
 
   a {
     text-decoration: none;
@@ -35,12 +57,12 @@ export const Item = styled.div`
     width: 100%:
     border: 1px solid #01ad00;
     outline: none;
-    padding: 8px 16px;
+    padding: 11px 16px;
     background: #01B700;
     border-radius: 8px;
     color: #fff;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 14px;
     transition: all 0.2s ease-in;
 
     &:hover {
@@ -55,6 +77,10 @@ export const Item = styled.div`
   .header {
     img {
       height: 150px;
+
+      @media (max-width: 680px) {
+        height: 100px;
+      }
     }
     border-radius: 15px 15px 0 0;
     padding: 16px;
@@ -81,6 +107,11 @@ export const Item = styled.div`
       margin-top: 8px;
       color: ${({ theme }) => theme.colors.yellow};
       font-size: 14px;
+
+      @media (max-width: 680px) {
+        overflow: hidden;
+        font-size: 14px;
+      }
     }
 
     .price {
@@ -98,8 +129,26 @@ export const Item = styled.div`
     }
 
     .actions {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 12px;
+
+      a {
+        text-align: center;
+        width: 100%;
+      }
+
+      @media (max-width: 520px) {
+        flex-direction: column;
+        a {
+          margin: 0; 
+          text-align: center;
+          width: 100%;
+        }
+      }
+
       button {
-        margin-right: 12px;
         padding: 8px 16px;
 
         &:nth-child(2) {
@@ -107,6 +156,11 @@ export const Item = styled.div`
           color: #fff;
           border:  1px solid ${({ theme }) => theme.colors.yellow};
           transition: all 0.2s ease-in;
+          
+          @media (max-width: 520px) {
+            width: 100%;
+            margin-top: 12px;
+          }
 
           &:hover {
             background: transparent;
@@ -114,7 +168,6 @@ export const Item = styled.div`
           }
         }
       }
-      margin-top: 12px;
     }
     
   }

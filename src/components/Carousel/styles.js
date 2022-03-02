@@ -9,7 +9,10 @@ export const Container = styled.div`
   background: ${({ theme }) => theme.colors.darkBlue};
   
   img {
-    height: 450px;
+    height: 400px;
+    @media (max-width: 768px) {
+      height: 300px;
+    }
   }
 `;
 
@@ -18,17 +21,37 @@ export const Item = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 52px 50px;
+  padding: 52px 0;
+
+  @media (max-width: 580px) {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  @media (max-width: 850px) {
+    padding: 32px;
+  }
 
   img {
-    margin-left: 152px;
+    @media (min-width: 850px) {
+      margin-left: 158px;
+    }
+    @media (max-width: 580px) {
+      height: 180px;
+    }
+    @media (max-width: 850px) {
+      margin: 0;
+    }
   }
 
   .info {
-    padding: 52px;
     h2 {
       color: #fff;
       font-size: 52px;
+
+      @media (max-width: 768px) {
+        font-size: 32px;
+      }
     }
 
     p {
@@ -36,6 +59,12 @@ export const Item = styled.div`
       font-size: 24px;
       margin-bottom: 28px;
       width: 80%;
+      @media (max-width: 768px) {
+        font-size: 16px;
+      }
+      @media (max-width: 580px) {
+        width: 100%;
+      }
     }
 
     a {
@@ -56,6 +85,11 @@ export const Item = styled.div`
   
       &:active {
         background: #019A00;
+      }
+
+      @media (max-width: 768px) {
+        padding: 8px 16px;
+        font-size: 16px;
       }
     }
   }
