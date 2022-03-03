@@ -25,11 +25,11 @@ export default function SearchResult() {
         <img src={arrow} alt="Voltar" />
         <span>Voltar</span>
       </Link>
-      <h1>
+      <h3>
         Resultados da pesquisa:
         {' '}
         {searchQuery}
-      </h1>
+      </h3>
       <div className="result">
         { searchResult.length > 0
           ? searchResult.map((supplement) => (

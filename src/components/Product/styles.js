@@ -8,8 +8,13 @@ export const Container = styled.div`
   width: 100%;
   max-width: 1080px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-
   display: flex;
+
+  @media (max-width: 580px) {
+    flex-direction: column;
+    max-width: 300px;
+    margin-bottom: 24px;
+  }
 
   .left {
     width: 50%; 
@@ -19,24 +24,54 @@ export const Container = styled.div`
     background: ${({ theme }) => theme.colors.yellow};
     padding: 24px;
     border-radius: 10px 0 0 10px;
+
+    @media (max-width: 580px) {
+      width: 100%;
+      border-radius: 10px 10px 0 0;
+    }
+
     img {
       height: 500px;
+      @media (max-width: 800px) {
+        height: 300px;
+      }
+
+      @media (max-width: 580px) {
+        height: 200px;
+      }
     }
   }
 
   .right {
     padding: 52px;
-    width: 50%; 
+    width: 50%;
+
+    @media (max-width: 1200px) {
+      padding: 32px;
+    }
+
+    @media (max-width: 580px) {
+      width: 100%;
+      border-radius: 0px 0px 10px 10px
+    }
     
     h1 {
       color: ${({ theme }) => theme.colors.red};
       font-size: 52px;
+
+      @media (max-width: 800px) {
+        font-size: 32px;
+      }
     }
 
     p {
       color: ${({ theme }) => theme.colors.blue};
       font-size: 24px;
       margin-bottom: 36px;
+      @media (max-width: 800px) {
+        font-size: 16px;
+        margin-bottom: 24px;
+      }
     }
 
     span {
@@ -49,12 +84,15 @@ export const Container = styled.div`
     .big {
       font-size: 52px;
       color: ${({ theme }) => theme.colors.blue};
+
+      @media (max-width: 1200px) {
+        font-size: 42px;
+      }
     }
 
     .actions {
       display: flex;
       flex-direction: column;
-      width: 50%;
       
       button {
         margin-top: 8px;

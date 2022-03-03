@@ -8,6 +8,14 @@ export default function CartProvider({ children }) {
 
   const [cartItems, setCartItems] = useState([]);
 
+  function handleDeleteCartItem(name) {
+    return setCartItems((prevState) => prevState.filter((item) => item.name !== name));
+  }
+
+  function handleDeleteCartItemById(id) {
+    return setCartItems((prevState) => prevState.filter((item) => item.id !== id));
+  }
+
   function handleItemsCounterPlus(id) {
     return setCartItems((prevState) => prevState.map((item) => (
       item.id === id
@@ -21,8 +29,8 @@ export default function CartProvider({ children }) {
   function handleItemsCounterMinus(id) {
     const clickedItem = cartItems.find((item) => item.id === id);
 
-    if (clickedItem.counter === 0) {
-      return 1;
+    if (clickedItem.counter === 1) {
+      handleDeleteCartItemById(id);
     }
     return setCartItems((prevState) => prevState.map((item) => (
       item.id === id
@@ -50,10 +58,6 @@ export default function CartProvider({ children }) {
     } else {
       handleItemsCounterPlus(item.id);
     }
-  }
-
-  function handleDeleteCartItem(name) {
-    return setCartItems((prevState) => prevState.filter((item) => item.name !== name));
   }
 
   const cartValues = useMemo(

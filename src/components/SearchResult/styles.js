@@ -3,12 +3,28 @@ import styled from 'styled-components';
 export const Container = styled.div`
   width: 100%;
   max-width: 1080px;
-  margin: auto;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
   margin-top: 52px;
+
+  h3 {
+    font-size: 24px;
+  }
+
+  @media (max-width: 1200px) {
+    max-width: 800px;
+  }
+
+  @media (max-width: 800px) {
+    max-width: 600px;
+  }
+  
+  @media (max-width: 580px) {
+    max-width: 400px;
+  }
 
   a {
     text-decoration: none;
@@ -23,22 +39,39 @@ export const Container = styled.div`
   }
 
   .result {
-    width: 100%;
-    margin-top: 24px;
-    display: flex;
-    align-items: center
-    justify-content: center;
+    margin: 24px auto;
+    gap: 24px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+
+    @media (max-width: 1200px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 800px) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 580px) {
+      grid-template-columns: 1fr;
+    }
   }
 ¨`;
 
 export const Item = styled.div`
-  margin-right: 24px;
   display: flex;
   flex-direction: column;
   width: 100%;
   max-width: 320px;
   border-radius: 20px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+  @media (max-width: 800px) {
+    max-width: 250px;
+  }
+  @media (max-width: 580px) {
+    max-width: 300px;
+  }
 
   a {
     text-decoration: none;
@@ -131,12 +164,17 @@ export const Item = styled.div`
 }`;
 
 export const NotFound = styled.div`
-  min-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #ddd;
+
+  @media (max-width: 580px) {
+    img {
+      height: 200px;
+    }
+  }
 
   a {
     font-size: 24px;

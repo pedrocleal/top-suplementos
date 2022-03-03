@@ -31,7 +31,7 @@ export const Grid = styled.div`
   }
 
   @media (max-width: 520px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 `;
 
@@ -109,6 +109,7 @@ export const Item = styled.div`
       font-size: 14px;
 
       @media (max-width: 680px) {
+        white-space: pre;
         overflow: hidden;
         font-size: 14px;
       }
