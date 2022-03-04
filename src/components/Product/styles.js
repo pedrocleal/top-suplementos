@@ -93,10 +93,34 @@ export const Container = styled.div`
     .actions {
       display: flex;
       flex-direction: column;
-      
+
+      a, 
       button {
-        margin-top: 8px;
         font-size: 24px;
+      }
+      
+      a {
+        min-width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #01ad00;
+        outline: none;
+        padding: 8px 12px;
+        background: #01B700;
+        border-radius: 8px;
+        color: #fff;
+        font-weight: bold;
+        transition: all 0.2s ease-in;
+        margin-bottom: 8px;
+
+        &:hover {
+          background: #01AD00;
+        }
+
+        &:active {
+          background: #019A00;
+        }
       }
 
       .cart {

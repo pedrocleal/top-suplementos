@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { Container, ContainerNotFound } from './styles';
 
 import { Button } from '../Button';
@@ -39,7 +40,7 @@ export default function Product({ id }) {
                 {product.price.discountPrice}
               </span>
               <div className="actions">
-                <Button>Comprar</Button>
+                <Link to="/checkout">Comprar</Link>
                 <Button className="cart" onClick={() => handleNewCartItem(product)}>+Carrinho</Button>
               </div>
             </div>
