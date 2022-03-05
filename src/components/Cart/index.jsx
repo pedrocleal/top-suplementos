@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 import {
-  useContext, useEffect, useMemo, useState,
+  useContext, useMemo,
 } from 'react';
 import { GrClose } from 'react-icons/gr';
+
+import { Link } from 'react-router-dom';
 
 import { Container } from './styles';
 
@@ -12,21 +14,12 @@ import { Button } from '../Button';
 import { CartContext } from '../../context/CartContext';
 
 export default function Cart({ isOpen, setCart }) {
-  const [total, setTotal] = useState('00,00');
-  const memoTotal = useMemo(() => total, [total]);
 
   const {
-    cartItems, handleDeleteCartItem, handleItemsCounterPlus, handleItemsCounterMinus,
+    cartItems, handleDeleteCartItem, handleItemsCounterPlus, handleItemsCounterMinus, total,
   } = useContext(CartContext);
 
   const cartItemsMemo = useMemo(() => cartItems, [cartItems]);
-
-  const itemsPrice = cartItemsMemo.map((item) => Number(item.price.replace(',', '.') * item.counter));
-
-  useEffect(() => {
-    const totalAmount = itemsPrice.reduce((prev, index) => prev + index, 0);
-    setTotal(totalAmount.toFixed(2).replace('.', ','));
-  }, [cartItems]);
 
   return (
     <Container isOpen={isOpen}>
@@ -55,10 +48,10 @@ export default function Cart({ isOpen, setCart }) {
         <h2>TOTAL</h2>
         <h1>
           R$
-          {memoTotal}
+          {total}
         </h1>
         <div className="actions">
-          <Button>Finalizar compra</Button>
+          <Link to="/checkout">Finalizar compra</Link>
           <Button onClick={() => setCart((prevState) => !prevState)}>Continuar comprando</Button>
         </div>
       </div>

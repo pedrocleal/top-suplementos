@@ -1,12 +1,21 @@
 import PropTypes from 'prop-types';
 
-import { createContext, useMemo, useState } from 'react';
+import {
+  createContext, useMemo, useState, useEffect,
+} from 'react';
 
 export const CartContext = createContext();
 
 export default function CartProvider({ children }) {
-
   const [cartItems, setCartItems] = useState([]);
+  const [total, setTotal] = useState('00,00');
+
+  const itemsPrice = cartItems.map((item) => Number(item.price.replace(',', '.') * item.counter));
+
+  useEffect(() => {
+    const totalAmount = itemsPrice.reduce((prev, index) => prev + index, 0);
+    setTotal(totalAmount.toFixed(2).replace('.', ','));
+  }, [cartItems]);
 
   function handleDeleteCartItem(name) {
     return setCartItems((prevState) => prevState.filter((item) => item.name !== name));
@@ -62,9 +71,9 @@ export default function CartProvider({ children }) {
 
   const cartValues = useMemo(
     () => ({
-      cartItems, handleDeleteCartItem, handleNewCartItem, handleItemsCounterPlus, handleItemsCounterMinus,
+      cartItems, handleDeleteCartItem, handleNewCartItem, handleItemsCounterPlus, handleItemsCounterMinus, total,
     }),
-    [cartItems, handleDeleteCartItem, handleNewCartItem],
+    [cartItems, handleDeleteCartItem, handleNewCartItem, total],
   );
 
   return (

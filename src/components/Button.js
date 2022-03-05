@@ -18,4 +18,10 @@ export const Button = styled.button`
   &:active {
     background: #019A00;
   }
+
+  &:disabled {
+    background: #ddd;
+    border: #fff;
+    cursor: default;
+  }
   `;

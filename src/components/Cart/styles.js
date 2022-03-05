@@ -55,6 +55,31 @@ export const Container = styled.div`
 
     .actions {
       margin-top: 16px;
+      
+      a {
+        margin-bottom: 8px;
+
+        display: flex;
+        justify-content: center;
+        text-decoration: none;
+        border: 1px solid #01ad00;
+        outline: none;
+        padding: 8px 12px;
+        background: #01B700;
+        border-radius: 8px;
+        color: #fff;
+        font-weight: bold;
+        font-size: 24px;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+          background: #01AD00;
+        }
+
+        &:active {
+          background: #019A00;
+        }
+      }
 
       button {
         width: 100%;
