@@ -10,6 +10,7 @@ import { Container } from './styles';
 import Header from '../Header';
 import ItemsNavigation from '../ItemsNavigation';
 import Routes from '../../Routes';
+import Footer from '../Footer';
 
 export default function App() {
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Header />
           <ItemsNavigation />
           <Routes />
+          <Footer />
         </Container>
       </ThemeProvider>
     </CartProvider>

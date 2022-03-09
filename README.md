@@ -24,7 +24,7 @@ Para a estilização, foi utilizado <a href="https://styled-components.com/" tar
 ### ✅ Funcionalidades
   - [X] Campo de pesquisa
   - [X] Carrinho de compras
-  - [ ] Página de checkout
+  - [X] Página de checkout
   - [X] CEP API
 
 ## Preview: 
