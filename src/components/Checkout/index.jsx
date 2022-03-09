@@ -40,7 +40,7 @@ export default function Checkout() {
         const data = await res.json();
         setAdress(`${data.logradouro}, ${data.localidade} - ${data.bairro}`);
       })
-      .catch((e) => console.log(e));
+      .catch((error) => console.log(error));
   }
 
   return (
@@ -83,7 +83,13 @@ export default function Checkout() {
               onChange={(e) => setCep(formatCep(e.target.value))}
               maxLength={9}
             />
-            <button type="button" onClick={handleCepSearch}>Calcular</button>
+            <button
+              type="button"
+              onClick={handleCepSearch}
+              disabled={!cep}
+            >
+              Calcular
+            </button>
           </div>
           <div className="result">
             Entregar em:

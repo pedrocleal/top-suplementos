@@ -71,7 +71,7 @@ export default function CartProvider({ children }) {
 
   const cartValues = useMemo(
     () => ({
-      cartItems, handleDeleteCartItem, handleNewCartItem, handleItemsCounterPlus, handleItemsCounterMinus, total,
+      cartItems, handleDeleteCartItem, handleNewCartItem, handleItemsCounterPlus, handleItemsCounterMinus, total, setTotal,
     }),
     [cartItems, handleDeleteCartItem, handleNewCartItem, total],
   );

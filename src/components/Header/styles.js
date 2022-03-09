@@ -49,6 +49,7 @@ export const SearchInput = styled.input`
   max-width: 450px;
   border: none;
   outline: none;
+  border-radius: 4px;
 
   &:placeholder {
     color: #999;

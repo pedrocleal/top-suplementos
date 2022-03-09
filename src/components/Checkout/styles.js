@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  margin-top: 24px;
   padding: 24px;
   width: 100%;
   border-radius: 10px;
@@ -60,6 +59,7 @@ export const Item = styled.div`
   padding: 16px;
   border-radius: 10px;
   box-shadow: 0px 4px 4px 0px #DFDFDF;
+  margin-bottom: 16px;
 
   img {
     height: 80px;
@@ -135,9 +135,23 @@ export const FreteContainer = styled.div`
       button {
         text-transform: uppercase;
         padding: 6px 16px;
-        border: none;
+        border: 1px solid #ddd;
         border-radius: 8px;
-        background: #ddd;
+        background: #fff;
+        transition: all 0.2s ease-in;
+        color: #3D3D3D;
+        font-weight: bold;
+
+        &:hover {
+          background: ${({ theme }) => theme.colors.yellow};
+          color: #fff;
+        }
+        
+        &:disabled {
+          cursor: default;
+          background: #ddd;
+          color: #aaa;
+        }
       }
 
     }

@@ -40,7 +40,7 @@ export default function Product({ id }) {
                 {product.price.discountPrice}
               </span>
               <div className="actions">
-                <Link to="/checkout">Comprar</Link>
+                <Link to="/checkout" onClick={() => handleNewCartItem(product)}>Comprar</Link>
                 <Button className="cart" onClick={() => handleNewCartItem(product)}>+Carrinho</Button>
               </div>
             </div>
