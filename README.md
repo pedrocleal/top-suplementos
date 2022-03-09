@@ -21,8 +21,11 @@ Para a estilização, foi utilizado <a href="https://styled-components.com/" tar
   - Vite
   - Yarn 
 
-### ✅ Features
+### ✅ Funcionalidades
   - [X] Campo de pesquisa
   - [X] Carrinho de compras
   - [ ] Página de checkout
-  - [ ] CEP API
+  - [X] CEP API
+
+## Preview: 
+![image](https://user-images.githubusercontent.com/53502542/156470638-796b8e3a-2018-40e8-a86e-0a914873c933.png)
