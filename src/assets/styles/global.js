@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
   * {
-    font-family: 'Sora', sans-serif;
+    font-family: 'Smooch Sans', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -17,4 +17,6 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
+
+  // TODO: adjust font family
 `;
