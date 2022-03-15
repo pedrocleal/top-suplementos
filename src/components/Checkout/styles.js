@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const Container = styled.div`
   padding: 24px;
   width: 100%;
+  max-width: 1080px;
   border-radius: 10px;
   box-shadow: 0px 4px 4px 0px #00000040;
 
@@ -61,8 +62,16 @@ export const Item = styled.div`
   box-shadow: 0px 4px 4px 0px #DFDFDF;
   margin-bottom: 16px;
 
+  @media (max-width: 620px) {
+    padding: 12px;
+  }
+
   img {
     height: 80px;
+
+    @media (max-width: 620px) {
+      height: 60px;
+    }
   }
 
   .info {
@@ -72,10 +81,15 @@ export const Item = styled.div`
 
     h3 {
       color: ${({ theme }) => theme.colors.red};
+      font-size: 28px;
+
+      @media (max-width: 620px) {
+        font-size: 22px;
+      }
     }
 
     p {
-      font-size: 24px;
+      font-size: 32px;
       font-weight: bold;
       color: ${({ theme }) => theme.colors.blue};
       margin-bottom: 8px;
@@ -99,7 +113,7 @@ export const Item = styled.div`
       }
       
       span {
-        font-size: 16px;
+        font-size: 18px;
         font-weight: bold;
       }
 
@@ -117,9 +131,23 @@ export const FreteContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   color: ${({ theme }) => theme.colors.darkBlue};
+  font-size: 22px;
+
+  @media (max-width: 620px) {
+    flex-direction: column;
+  }
 
   .frete {
     .input {
+      display: flex;
+
+      span {
+        @media (max-width: 620px) {
+          font-size: 21px;
+          display: flex;
+          align-items: center;
+        }
+      }
       & > * {
         margin-right: 8px;
       }
@@ -130,6 +158,8 @@ export const FreteContainer = styled.div`
         border: 1px solid #ddd;
         border-radius: 4px;
         outline: none;    
+        font-size: 18px;
+        max-height: 30px;
       }
 
       button {
@@ -141,10 +171,15 @@ export const FreteContainer = styled.div`
         transition: all 0.2s ease-in;
         color: #3D3D3D;
         font-weight: bold;
+        font-size: 18px;
+        max-height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &:hover {
           background: ${({ theme }) => theme.colors.yellow};
-          color: #fff;
+          color: #000;
         }
         
         &:disabled {
@@ -165,6 +200,12 @@ export const FreteContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    @media (max-width: 620px) {
+      margin-top: 24px;
+      width: 100%;
+      align-items: flex-start;
+    }
     
     input {
       margin-right: 8px;

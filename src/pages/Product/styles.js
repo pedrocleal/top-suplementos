@@ -27,7 +27,8 @@ export const Container = styled.div`
     align-items: center;
     text-decoration: none;
     color: ${({ theme }) => theme.colors.blue};
-    font-size: 18px;
+    font-size: 24px;
+    font-weight: bold;
   
     span {
       margin-left: 4px;

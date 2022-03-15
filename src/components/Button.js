@@ -10,6 +10,7 @@ export const Button = styled.button`
   font-weight: bold;
   font-size: 24px;
   transition: all 0.2s ease-in;
+  font-family: 'Smooch Sans', sans-serif;
 
   &:hover {
     background: #01AD00;

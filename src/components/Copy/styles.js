@@ -6,5 +6,5 @@ export const Container = styled.div`
   background: ${({ theme }) => theme.colors.red};
   padding: 8px 50px;
   color: #fff;
-  font-size: 16px;
+  font-size: 24px;
 `;

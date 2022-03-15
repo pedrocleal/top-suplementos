@@ -57,12 +57,12 @@ export const Item = styled.div`
     width: 100%:
     border: 1px solid #01ad00;
     outline: none;
-    padding: 11px 16px;
+    padding: 9px 16px;
     background: #01B700;
     border-radius: 8px;
     color: #fff;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 24px;
     transition: all 0.2s ease-in;
 
     &:hover {
@@ -99,19 +99,18 @@ export const Item = styled.div`
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      font-size: 24px;
+      font-size: 32px;
       color: #fff;
     }
 
     p {
       margin-top: 8px;
       color: ${({ theme }) => theme.colors.yellow};
-      font-size: 14px;
+      font-size: 18px;
 
       @media (max-width: 680px) {
-        white-space: pre;
         overflow: hidden;
-        font-size: 14px;
+        font-size: 18px;
       }
     }
 
@@ -121,9 +120,10 @@ export const Item = styled.div`
       span {
         display: block;
         color: #999;
+        font-size: 20px;
 
         &:nth-child(2) {
-          font-size: 24px;
+          font-size: 36px;
           color: #fff
         }
       }
@@ -140,7 +140,7 @@ export const Item = styled.div`
         width: 100%;
       }
 
-      @media (max-width: 520px) {
+      @media (max-width: 680px) {
         flex-direction: column;
         a {
           margin: 0; 
@@ -158,7 +158,7 @@ export const Item = styled.div`
           border:  1px solid ${({ theme }) => theme.colors.yellow};
           transition: all 0.2s ease-in;
           
-          @media (max-width: 520px) {
+          @media (max-width: 680px) {
             width: 100%;
             margin-top: 12px;
           }

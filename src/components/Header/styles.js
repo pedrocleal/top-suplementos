@@ -43,7 +43,8 @@ export const SearchContainer = styled.div`
 `;
 
 export const SearchInput = styled.input`
-  font-family: 'Sora', sans-serif;
+  font-family: 'Smooch Sans', sans-serif;
+  font-size: 16px;
   padding: 10px;
   width: 100%;
   max-width: 450px;

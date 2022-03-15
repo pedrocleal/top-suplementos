@@ -11,7 +11,7 @@ export const Container = styled.div`
   margin-top: 52px;
 
   h3 {
-    font-size: 24px;
+    font-size: 32px;
   }
 
   @media (max-width: 1200px) {
@@ -84,7 +84,7 @@ export const Item = styled.div`
     border-radius: 8px;
     color: #fff;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 24px;
     transition: all 0.2s ease-in;
 
     &:hover {
@@ -117,14 +117,14 @@ export const Item = styled.div`
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      font-size: 24px;
+      font-size: 32px;
       color: #fff;
     }
 
     p {
       margin-top: 8px;
       color: ${({ theme }) => theme.colors.yellow};
-      font-size: 14px;
+      font-size: 18px;
     }
 
     .price {
@@ -133,9 +133,10 @@ export const Item = styled.div`
       span {
         display: block;
         color: #999;
+        font-size: 22px;
 
         &:nth-child(2) {
-          font-size: 24px;
+          font-size: 42px;
           color: #fff
         }
       }

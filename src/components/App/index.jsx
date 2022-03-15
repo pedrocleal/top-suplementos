@@ -8,9 +8,9 @@ import defaultTheme from '../../assets/styles/themes/default';
 import { Container } from './styles';
 
 import Header from '../Header';
-import ItemsNavigation from '../ItemsNavigation';
 import Routes from '../../Routes';
 import Footer from '../Footer';
+import Copy from '../Copy';
 
 export default function App() {
   return (
@@ -19,7 +19,7 @@ export default function App() {
         <GlobalStyles />
         <Container>
           <Header />
-          <ItemsNavigation />
+          <Copy />
           <Routes />
           <Footer />
         </Container>

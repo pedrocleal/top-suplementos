@@ -1,6 +1,6 @@
 import { Container } from './styles';
 
-export default function ItemsNavigation() {
+export default function Copy() {
   return (
     <Container>
       <p>

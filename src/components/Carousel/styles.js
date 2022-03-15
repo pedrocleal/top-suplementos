@@ -47,20 +47,20 @@ export const Item = styled.div`
   .info {
     h2 {
       color: #fff;
-      font-size: 52px;
+      font-size: 72px;
 
-      @media (max-width: 768px) {
-        font-size: 32px;
+      @media (max-width: 850px) {
+        font-size: 42px;
       }
     }
 
     p {
       color: ${({ theme }) => theme.colors.yellow};
-      font-size: 24px;
+      font-size: 32px;
       margin-bottom: 28px;
       width: 80%;
-      @media (max-width: 768px) {
-        font-size: 16px;
+      @media (max-width: 850px) {
+        font-size: 24px;
       }
       @media (max-width: 580px) {
         width: 100%;

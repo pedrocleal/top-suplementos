@@ -21,12 +21,13 @@ export const Container = styled.div`
     flex-direction: column;
     
     strong {
-      color: ${({ theme }) => theme.colors.red}
+      color: ${({ theme }) => theme.colors.red};
+      font-size: 24px;
     }
 
     span {
       color: ${({ theme }) => theme.colors.blue};
-      font-size: 24px;
+      font-size: 32px;
       font-weight: bold;
     }
   }
@@ -51,7 +52,7 @@ export const Container = styled.div`
     }
 
     span {
-      font-size: 16px;
+      font-size: 24px;
     }
 
     .trash {

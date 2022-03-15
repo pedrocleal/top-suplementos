@@ -48,6 +48,7 @@ export const Container = styled.div`
 
   .footer {
     margin-top: 32px;
+    font-size: 24px;
 
     h1 {
       color: #4BDB4A;

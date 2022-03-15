@@ -17,6 +17,4 @@ export default createGlobalStyle`
   button {
     cursor: pointer;
   }
-
-  // TODO: adjust font family
 `;

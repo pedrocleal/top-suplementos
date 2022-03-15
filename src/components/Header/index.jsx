@@ -34,7 +34,7 @@ export default function Header() {
             onChange={(event) => setSearch(event.target.value)}
           />
 
-          <Link to={`/search/${search}`}>
+          <Link to={`/search/${search}`} type="submit">
             <img src={searchIcon} alt="Pesquisar" />
           </Link>
         </SearchContainer>

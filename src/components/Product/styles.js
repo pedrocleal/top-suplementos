@@ -57,20 +57,29 @@ export const Container = styled.div`
     
     h1 {
       color: ${({ theme }) => theme.colors.red};
-      font-size: 52px;
+      font-size: 64px;
 
       @media (max-width: 800px) {
+        font-size: 48px;
+      }
+
+      @media (max-width: 520px) {
         font-size: 32px;
       }
     }
 
     p {
       color: ${({ theme }) => theme.colors.blue};
-      font-size: 24px;
+      font-size: 32px;
       margin-bottom: 36px;
+      
       @media (max-width: 800px) {
-        font-size: 16px;
+        font-size: 24px;
         margin-bottom: 24px;
+      }
+
+      @media (max-width: 520px) {
+        font-size: 18px;
       }
     }
 
@@ -78,15 +87,15 @@ export const Container = styled.div`
       display: block;
       color: #999;
       font-weight: bold;
-      font-size: 24px;
+      font-size: 32px;
     }
 
     .big {
-      font-size: 52px;
+      font-size: 72px;
       color: ${({ theme }) => theme.colors.blue};
 
       @media (max-width: 1200px) {
-        font-size: 42px;
+        font-size: 52px;
       }
     }
 
@@ -96,7 +105,7 @@ export const Container = styled.div`
 
       a, 
       button {
-        font-size: 24px;
+        font-size: 28px;
       }
       
       a {

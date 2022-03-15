@@ -8,6 +8,18 @@ export const Container = styled.div`
   width: 100%;
   max-width: 1080px;
 
+  @media (max-width: 1200px) {
+    max-width: 800px;
+  }
+
+  @media (max-width: 820px) {
+    max-width: 600px;
+  }
+
+  @media (max-width: 620px) {
+    max-width: 400px;
+  }
+
   a {
     text-decoration: none;
     color: ${({ theme }) => theme.colors.darkBlue};
