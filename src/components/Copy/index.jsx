@@ -1,14 +1,15 @@
+import { Link } from 'react-router-dom';
 import { Container } from './styles';
 
 export default function Copy() {
   return (
     <Container>
-      <p>
+      <Link to="/products">
         Os melhores suplementos estão
         {' '}
         <strong>AQUI</strong>
         !
-      </p>
+      </Link>
     </Container>
   );
 }

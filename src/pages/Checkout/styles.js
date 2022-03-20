@@ -24,7 +24,9 @@ export const Container = styled.div`
     text-decoration: none;
     color: ${({ theme }) => theme.colors.darkBlue};
     display: flex;
-    align-items: center;
+    align-items: center;  
+    font-size: 24px;
+    font-weight: bold;
 
     span {
       margin-left: 8px;
