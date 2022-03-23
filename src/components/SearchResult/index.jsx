@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom';
 
-import { useContext } from 'react';
+import { useState, useContext, useEffect } from 'react';
 import { Container, Item, NotFound } from './styles';
 import { Button } from '../Button';
 
@@ -10,7 +10,10 @@ import search from '../../assets/images/icons/search-not-found.svg';
 import { supplements } from '../../data/supplements';
 import { CartContext } from '../../context/CartContext';
 
+import Loader from '../Loader';
+
 export default function SearchResult() {
+  const [isLoading, setIsLoading] = useState(true);
 
   const { searchQuery } = useParams();
   const { handleNewCartItem } = useContext(CartContext);
@@ -19,8 +22,15 @@ export default function SearchResult() {
     (supplement) => supplement.name.toLowerCase().includes(searchQuery.toLowerCase()),
   );
 
+  useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 500);
+  }, []);
+
   return (
     <Container>
+      {isLoading && <Loader />}
       <Link to="/">
         <img src={arrow} alt="Voltar" />
         <span>Voltar</span>

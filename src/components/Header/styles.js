@@ -30,6 +30,18 @@ export const SearchContainer = styled.div`
   background #fff;
   border-radius: 4px;
 
+  button {
+    border: none;
+    background: transparent;
+    outline: none;
+    transition: all 0.2s ease-in;
+
+    &:disabled {
+      opacity: 0.2;
+      cursor: default
+    }
+  }
+
   img {
     margin-top: 4px;
     height: 30px;
@@ -44,7 +56,7 @@ export const SearchContainer = styled.div`
 
 export const SearchInput = styled.input`
   font-family: 'Smooch Sans', sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   padding: 10px;
   width: 100%;
   max-width: 450px;
@@ -69,13 +81,19 @@ export const CartContainer = styled.button`
 
   span {
     background: #fff;
-    border-radius: 20px;
+    border-radius: 10px;
+    width: 20px;
+    height: 20px;
     padding: 4px;
     color: ${({ theme }) => theme.colors.blue};
     font-weight: bold;
+    font-size: 18px;
     position: absolute;
     top: 0;
     right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @media (max-width: 580px) {
       padding: 2px;

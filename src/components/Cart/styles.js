@@ -57,7 +57,7 @@ export const Container = styled.div`
     .actions {
       margin-top: 16px;
       
-      a {
+      button {
         margin-bottom: 8px;
 
         display: flex;

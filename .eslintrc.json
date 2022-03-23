@@ -26,6 +26,8 @@
       "padded-blocks": 0,
       "jsx-a11y/control-has-associated-label": 0,
       "max-len": 0,
-      "react/jsx-no-useless-fragment": 0
+      "react/jsx-no-useless-fragment": 0,
+      "no-console": 0,
+      "no-promise-executor-return": 0
     }
 }

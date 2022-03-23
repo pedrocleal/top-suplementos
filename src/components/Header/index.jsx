@@ -1,8 +1,11 @@
+import { Link, useNavigate } from 'react-router-dom';
+
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+
 import logo from '../../assets/images/icons/Logo.svg';
 import cartIcon from '../../assets/images/icons/Carrinho.svg';
 import searchIcon from '../../assets/images/icons/Search.svg';
+
 import {
   Container, SearchContainer, SearchInput, CartContainer,
 } from './styles';
@@ -15,9 +18,18 @@ export default function Header() {
   const [search, setSearch] = useState('');
   const [cart, setCart] = useState(false);
 
-  const { cartItems } = useContext(CartContext);
+  let navigate = useNavigate();
 
+  const { cartItems } = useContext(CartContext);
   const itemsCounter = cartItems.length;
+
+  function handleSearchClick() {
+    if (!search) {
+      return;
+    }
+    let path = `/search/${search}`;
+    navigate(path);
+  }
 
   return (
     <>
@@ -34,9 +46,9 @@ export default function Header() {
             onChange={(event) => setSearch(event.target.value)}
           />
 
-          <Link to={`/search/${search}`} type="submit">
+          <button onClick={handleSearchClick} type="button" disabled={!search}>
             <img src={searchIcon} alt="Pesquisar" />
-          </Link>
+          </button>
         </SearchContainer>
 
         <CartContainer onClick={() => setCart((prevState) => !prevState)}>

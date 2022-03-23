@@ -4,7 +4,7 @@ import {
 } from 'react';
 import { GrClose } from 'react-icons/gr';
 
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { Container } from './styles';
 
@@ -20,6 +20,13 @@ export default function Cart({ isOpen, setCart }) {
   } = useContext(CartContext);
 
   const cartItemsMemo = useMemo(() => cartItems, [cartItems]);
+
+  let navigate = useNavigate();
+
+  function handleFinishPurchase() {
+    setCart(false);
+    navigate('/checkout');
+  }
 
   return (
     <Container isOpen={isOpen}>
@@ -51,7 +58,7 @@ export default function Cart({ isOpen, setCart }) {
           {total}
         </h1>
         <div className="actions">
-          <Link to="/checkout">Finalizar compra</Link>
+          <button type="button" onClick={handleFinishPurchase}>Finalizar compra</button>
           <Button onClick={() => setCart((prevState) => !prevState)}>Continuar comprando</Button>
         </div>
       </div>

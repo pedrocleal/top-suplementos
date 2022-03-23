@@ -35,13 +35,15 @@ export const Container = styled.div`
 
     span {
       margin-left: 4px;
+      font-size: 24px;
+      font-weight: bold;
     }
   }
 
   .result {
     margin: 24px auto;
     gap: 24px;
-    display: grid;
+    display: flex;
     grid-template-columns: 1fr 1fr 1fr;
 
     @media (max-width: 1200px) {
