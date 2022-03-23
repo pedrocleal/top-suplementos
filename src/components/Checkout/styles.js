@@ -138,6 +138,7 @@ export const FreteContainer = styled.div`
   }
 
   .frete {
+    font-weight: bold;
     .input {
       display: flex;
 
@@ -155,21 +156,22 @@ export const FreteContainer = styled.div`
       input {    
         text-align: center;
         padding: 4px;
-        border: 1px solid #ddd;
+        border: 2px solid #ddd;
         border-radius: 4px;
         outline: none;    
         font-size: 18px;
+        font-weight: bold;
         max-height: 30px;
       }
 
       button {
         text-transform: uppercase;
         padding: 6px 16px;
-        border: 1px solid #ddd;
+        border: 1px solid ${({ theme }) => theme.colors.yellow};
         border-radius: 8px;
-        background: #fff;
+        background: ${({ theme }) => theme.colors.yellow};
+        color: #fff;
         transition: all 0.2s ease-in;
-        color: #3D3D3D;
         font-weight: bold;
         font-size: 18px;
         max-height: 30px;
@@ -179,10 +181,11 @@ export const FreteContainer = styled.div`
 
         &:hover {
           background: ${({ theme }) => theme.colors.yellow};
-          color: #000;
+          color: #fff;
         }
         
         &:disabled {
+          border: 1px solid #ddd;
           cursor: default;
           background: #ddd;
           color: #aaa;
@@ -200,6 +203,7 @@ export const FreteContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    font-weight: bold;
 
     @media (max-width: 620px) {
       margin-top: 24px;

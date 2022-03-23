@@ -24,6 +24,8 @@ export const Overlay = styled.div`
 
 export const Container = styled.div`
   margin-top: 100px;
+  margin-left: 24px;  
+  margin-right: 24px;  
   max-width: 800px;
   width: 100%;
   padding: 24px;
@@ -32,7 +34,7 @@ export const Container = styled.div`
   background: #fafafa;
   border-radius: 15px;
   box-shadow: 0px 4px 4px 0px #00000040;
-
+  
   display: flex;
   align-items: center;
   flex-direction: column;

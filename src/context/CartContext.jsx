@@ -7,11 +7,26 @@ import {
 export const CartContext = createContext();
 
 export default function CartProvider({ children }) {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useState(() => {
+    const storedCartItems = localStorage.getItem('cartItems');
+
+    if (storedCartItems) {
+      return JSON.parse(storedCartItems);
+    }
+
+    return [];
+  });
+
   const [total, setTotal] = useState('00,00');
 
   const itemsPrice = cartItems.map((item) => Number(item.price.replace(',', '.') * item.counter));
 
+  // This useEffect is for update the cart items on localStorage every time when cartItems change
+  useEffect(() => {
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+  }, [cartItems]);
+
+  // This useEffect is for calculate the totalAmount when a new item is add
   useEffect(() => {
     const totalAmount = itemsPrice.reduce((prev, index) => prev + index, 0);
     setTotal(totalAmount.toFixed(2).replace('.', ','));
