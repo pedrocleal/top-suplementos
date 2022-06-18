@@ -1,7 +1,6 @@
 <h1 align="center">Top Suplementos 💪</h1>
 
 <h2 align="center">🚀 Loja virtual de suplementos. 🚀</h1>
-<h3 align="center" >🚧 Em construção... 🚧</h3> 
 
 ![Badge](https://img.shields.io/github/last-commit/pedrocleal/top-suplementos?style=for-the-badge)
 ![Badge](https://img.shields.io/github/languages/top/pedrocleal/top-suplementos?color=c&style=for-the-badge)
